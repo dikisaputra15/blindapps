@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('statistik:add')->everyMinute();
+        $schedule->command('task:runcategory')->dailyAt('17:00');
     }
 
     /**
