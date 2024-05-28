@@ -7,21 +7,21 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 
-class AutoStatistik extends Command
+class Target extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'task:runcategory';
+    protected $signature = 'task:runtarget';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'category added';
+    protected $description = 'target added';
 
     /**
      * Execute the console command.
@@ -34,12 +34,12 @@ class AutoStatistik extends Command
 
     public function handle()
     {
-        $response = Http::get('http://127.0.0.1:8000/');
+        $response = Http::get('http://127.0.0.1:8000/target');
 
         if ($response->successful()) {
-            $this->info('Category accessed successfully.');
+            $this->info('Target accessed successfully.');
         } else {
-            $this->error('Failed to access category.');
+            $this->error('Failed to access target.');
         } 
     }
 }
