@@ -12,16 +12,16 @@ class TanggalController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        $tgl_coba = '2023-06-13';
-        
+        // $tgl_coba = '2023-06-13';
+
         $tanggals = DB::table('wp_postmeta')
             ->join('wp_posts', 'wp_posts.ID', '=', 'wp_postmeta.post_id')
-            ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date') 
-            ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_coba)
+            ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date')
+            ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             ->where('wp_postmeta.meta_key', '_content_field_89_date_end')
             ->get();
-        
-        
+
+
         if($tanggals->isNotEmpty()){
             foreach($tanggals as $tanggal){
                 $tgl_unix = $tanggal->meta_value;
@@ -32,8 +32,9 @@ class TanggalController extends Controller
                         'listing_date' => $tgl_hasil
                     ]);
             }
+
+            echo "sukses";
         }
 
-        echo "sukses";
     }
 }
