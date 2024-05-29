@@ -34,12 +34,12 @@ class Actor extends Command
 
     public function handle()
     {
-        $response = Http::get('http://127.0.0.1:8000/actor');
+        $response = Http::get('https://dev1.code69.my.id/actor');
 
         if ($response->successful()) {
             $this->info('Actor accessed successfully.');
         } else {
             $this->error('Failed to access Actor.');
-        } 
+        }
     }
 }

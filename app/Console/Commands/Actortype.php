@@ -34,12 +34,12 @@ class Actortype extends Command
 
     public function handle()
     {
-        $response = Http::get('http://127.0.0.1:8000/actortype');
+        $response = Http::get('https://dev1.code69.my.id/actortype');
 
         if ($response->successful()) {
             $this->info('Actor Type accessed successfully.');
         } else {
             $this->error('Failed to access Actor Type.');
-        } 
+        }
     }
 }
