@@ -59,6 +59,8 @@ class WeapontypeController extends Controller
                     ]);
             }
             echo "sukses";
+        }else{
+            echo "empty";
         }
 
     }

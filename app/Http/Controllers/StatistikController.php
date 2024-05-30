@@ -60,6 +60,8 @@ class StatistikController extends Controller
                 DB::table('statistiks')->insert($category);
             }
             echo "sukses";
+        }else{
+            echo "empty";
         }
     }
 }

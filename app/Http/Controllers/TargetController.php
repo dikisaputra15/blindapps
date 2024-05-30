@@ -56,6 +56,8 @@ class TargetController extends Controller
                     ]);
             }
             echo "sukses";
+        }else{
+            echo "empty";
         }
 
     }

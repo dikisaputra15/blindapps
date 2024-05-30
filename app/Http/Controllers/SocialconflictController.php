@@ -47,6 +47,8 @@ class SocialconflictController extends Controller
                         ]);
                 }
                 echo "sukses";
+            }else{
+                echo "empty";
             }
 
     }

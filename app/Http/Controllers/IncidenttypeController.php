@@ -46,6 +46,8 @@ class IncidenttypeController extends Controller
                         ]);
                 }
                 echo "sukses";
+            }else{
+                echo "empty";
             }
 
     }

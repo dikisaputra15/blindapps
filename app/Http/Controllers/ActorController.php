@@ -55,6 +55,8 @@ class ActorController extends Controller
                     ]);
             }
             echo "sukses";
+        }else{
+            echo "empty";
         }
 
     }

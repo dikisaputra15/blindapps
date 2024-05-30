@@ -116,6 +116,8 @@ class TargettypeController extends Controller
                             ]);
                     }
                     echo "sukses";
+                }else{
+                    echo "empty";
                 }
 
     }
