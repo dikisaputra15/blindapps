@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('weapon_type')->nullable();
             $table->string('actor')->nullable();
             $table->string('actor_type')->nullable();
+            $table->string('sub_actor_type')->nullable();
             $table->string('target')->nullable();
             $table->string('target_type')->nullable();
             $table->integer('number_of_incident');

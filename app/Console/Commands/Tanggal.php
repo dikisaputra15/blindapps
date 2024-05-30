@@ -34,7 +34,7 @@ class Tanggal extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/tanggal');
+        $response = Http::get('http://127.0.0.1:8000/tanggal');
 
         if ($response->successful()) {
             $this->info('Tanggal accessed successfully.');

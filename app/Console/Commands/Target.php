@@ -34,7 +34,7 @@ class Target extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/target');
+        $response = Http::get('http://127.0.0.1:8000/target');
 
         if ($response->successful()) {
             $this->info('Target accessed successfully.');

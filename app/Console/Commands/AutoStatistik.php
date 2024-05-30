@@ -34,7 +34,7 @@ class AutoStatistik extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/');
+        $response = Http::get('http://127.0.0.1:8000/');
 
         if ($response->successful()) {
             $this->info('Category accessed successfully.');

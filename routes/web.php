@@ -27,3 +27,4 @@ Route::get('/actortype', [App\Http\Controllers\ActortypeController::class, 'inde
 Route::get('/target', [App\Http\Controllers\TargetController::class, 'index']);
 Route::get('/targettype', [App\Http\Controllers\TargettypeController::class, 'index']);
 Route::get('/tanggal', [App\Http\Controllers\TanggalController::class, 'index']);
+Route::get('/subactortype', [App\Http\Controllers\SubactortypeController::class, 'index']);

@@ -43,6 +43,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runtargettype')->dailyAt('22:24');
 
         $schedule->command('task:runtanggal')->dailyAt('22:27');
+
+        $schedule->command('task:runsubactortype')->dailyAt('22:30');
     }
 
     /**
