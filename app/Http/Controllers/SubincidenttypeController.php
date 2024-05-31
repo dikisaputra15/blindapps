@@ -12,7 +12,7 @@ class SubincidenttypeController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        $tgl_coba = '2024-01-01';
+        $tgl_coba = '2024-03-25';
         $sutypes = DB::table('wp_w2gm_locations_relationships')
             ->join('wp_term_relationships', 'wp_term_relationships.object_id', '=', 'wp_w2gm_locations_relationships.post_id')
             ->join('wp_term_taxonomy', 'wp_term_taxonomy.term_taxonomy_id', '=', 'wp_term_relationships.term_taxonomy_id')

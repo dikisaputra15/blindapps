@@ -34,7 +34,7 @@ return new class extends Migration
             $table->integer('number_of_incident');
             $table->integer('number_of_injuries');
             $table->integer('number_of_fatalities');
-            $table->string('additional_info');
+            $table->text('additional_info');
             $table->date('date_posting');
         });
     }

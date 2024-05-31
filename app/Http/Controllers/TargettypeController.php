@@ -12,7 +12,7 @@ class TargettypeController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        $tgl_coba = '2024-01-01';
+        $tgl_coba = '2024-03-25';
 
         $tartypes = DB::table('wp_w2gm_locations_relationships')
                 ->join('wp_term_relationships', 'wp_term_relationships.object_id', '=', 'wp_w2gm_locations_relationships.post_id')

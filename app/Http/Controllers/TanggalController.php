@@ -12,7 +12,7 @@ class TanggalController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        $tgl_coba = '2024-01-01';
+        $tgl_coba = '2024-03-25';
 
         $tanggals = DB::table('wp_postmeta')
             ->join('wp_posts', 'wp_posts.ID', '=', 'wp_postmeta.post_id')
