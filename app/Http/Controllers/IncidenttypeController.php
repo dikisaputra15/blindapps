@@ -12,7 +12,7 @@ class IncidenttypeController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        $tgl_coba = '2024-03-25';
+        // $tgl_coba = '2024-06-02';
 
         $itypes = DB::table('wp_w2gm_locations_relationships')
             ->join('wp_term_relationships', 'wp_term_relationships.object_id', '=', 'wp_w2gm_locations_relationships.post_id')
@@ -20,7 +20,7 @@ class IncidenttypeController extends Controller
             ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
             ->join('wp_posts', 'wp_posts.ID', '=', 'wp_w2gm_locations_relationships.post_id')
             ->select('wp_w2gm_locations_relationships.post_id', 'wp_terms.name', 'wp_posts.post_date')
-            ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_coba)
+            ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             ->where(function($query) {
                 $query->where('wp_terms.term_id', 434)
                       ->orWhere('wp_terms.term_id', 435)
