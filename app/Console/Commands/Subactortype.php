@@ -34,7 +34,7 @@ class Subactortype extends Command
 
     public function handle()
     {
-        $response = Http::get('http://127.0.0.1:8000/subactortype');
+        $response = Http::get('https://dev1.code69.my.id/subactortype');
 
         if ($response->successful()) {
             $this->info('Actor Type accessed successfully.');

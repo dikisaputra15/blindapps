@@ -34,7 +34,7 @@ class Targettype extends Command
 
     public function handle()
     {
-        $response = Http::get('http://127.0.0.1:8000/targettype');
+        $response = Http::get('https://dev1.code69.my.id/targettype');
 
         if ($response->successful()) {
             $this->info('Target Type accessed successfully.');
