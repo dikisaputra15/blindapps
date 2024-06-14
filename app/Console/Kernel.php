@@ -24,27 +24,27 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('task:runcategory')->dailyAt('22:00');
+        $schedule->command('task:runcategory')->dailyAt('23:00');
 
-        $schedule->command('task:runincident')->dailyAt('22:10');
+        $schedule->command('task:runincident')->dailyAt('23:05');
 
-        $schedule->command('task:runsubincident')->dailyAt('22:20');
+        $schedule->command('task:runsubincident')->dailyAt('23:10');
 
-        $schedule->command('task:runsocialconflict')->dailyAt('22:30');
+        $schedule->command('task:runsocialconflict')->dailyAt('23:15');
 
-        $schedule->command('task:runweapon')->dailyAt('22:40');
+        $schedule->command('task:runweapon')->dailyAt('23:20');
 
-        $schedule->command('task:runactor')->dailyAt('22:50');
+        $schedule->command('task:runactor')->dailyAt('23:25');
 
-        $schedule->command('task:runactortype')->dailyAt('23:00');
+        $schedule->command('task:runactortype')->dailyAt('23:30');
 
-        $schedule->command('task:runtarget')->dailyAt('23:10');
+        $schedule->command('task:runtarget')->dailyAt('23:35');
 
-        $schedule->command('task:runtargettype')->dailyAt('23:20');
+        $schedule->command('task:runtargettype')->dailyAt('23:40');
 
-        $schedule->command('task:runtanggal')->dailyAt('23:30');
+        $schedule->command('task:runtanggal')->dailyAt('23:45');
 
-        $schedule->command('task:runsubactortype')->dailyAt('23:40');
+        $schedule->command('task:runsubactortype')->dailyAt('23:50');
     }
 
     /**
