@@ -74,7 +74,14 @@ class TargetController extends Controller
                 ->orWhere('wp_terms.term_id', 16935)
                 ->orWhere('wp_terms.term_id', 16965)
                 ->orWhere('wp_terms.term_id', 16966)
-                ->orWhere('wp_terms.term_id', 17789);
+                ->orWhere('wp_terms.term_id', 17789)
+                ->orWhere('wp_terms.term_id', 16151)
+                ->orWhere('wp_terms.term_id', 17136)
+                ->orWhere('wp_terms.term_id', 16160)
+                ->orWhere('wp_terms.term_id', 17138)
+                ->orWhere('wp_terms.term_id', 17137)
+                ->orWhere('wp_terms.term_id', 16181)
+                ->orWhere('wp_terms.term_id', 16159);
             })
         ->get();
 

@@ -12,7 +12,7 @@ class StatistikController extends Controller
     {
         $tgl = Carbon::now();
         $tgl_now = $tgl->format('Y-m-d');
-        // $tgl_coba = '2024-06-02';
+        $tgl_coba = '2024-07-03';
         $icats = DB::table('wp_terms')
             ->join('wp_term_taxonomy', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
             ->join('wp_term_relationships', 'wp_term_taxonomy.term_taxonomy_id', '=', 'wp_term_relationships.term_taxonomy_id')
@@ -28,6 +28,11 @@ class StatistikController extends Controller
                       ->orWhere('wp_terms.term_id', 391);
             })
             ->get();
+
+            // $no = 1;
+            // foreach ($icats as $icat) {
+            //     echo $no++ . " " . $icat->ID . " " . $icat->post_title . "<br>";
+            // }    
 
         if($icats->isNotEmpty()){
             foreach ($icats as $icat){

@@ -25,7 +25,6 @@ class ActorController extends Controller
             $query->where('wp_terms.term_id', 16165)
                 ->orWhere('wp_terms.term_id', 16152)
                 ->orWhere('wp_terms.term_id', 16158)
-                ->orWhere('wp_terms.term_id', 16159)
                 ->orWhere('wp_terms.term_id', 16153)
                 ->orWhere('wp_terms.term_id', 16169)
                 ->orWhere('wp_terms.term_id', 16150)
@@ -48,7 +47,9 @@ class ActorController extends Controller
                 ->orWhere('wp_terms.term_id', 16931)
                 ->orWhere('wp_terms.term_id', 16932)
                 ->orWhere('wp_terms.term_id', 16952)
-                ->orWhere('wp_terms.term_id', 17794);
+                ->orWhere('wp_terms.term_id', 17794)
+                ->orWhere('wp_terms.term_id', 17134)
+                ->orWhere('wp_terms.term_id', 18128);
             })
         ->get();
 
