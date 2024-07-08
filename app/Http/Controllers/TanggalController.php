@@ -22,27 +22,27 @@ class TanggalController extends Controller
             ->where('wp_postmeta.meta_key', '_content_field_89_date_end')
             ->get();
 
-           $no = 1;
-            foreach ($tanggals as $tanggal) {
-                echo $no++ . " " . $tanggal->id . "<br>";
-            } 
+        //    $no = 1;
+        //     foreach ($tanggals as $tanggal) {
+        //         echo $no++ . " " . $tanggal->id . "<br>";
+        //     } 
 
 
-        // if($tanggals->isNotEmpty()){
-        //     foreach($tanggals as $tanggal){
-        //         $tgl_unix = $tanggal->meta_value;
-        //         $tgl_hasil = date('Y-m-d', $tgl_unix);
-        //         DB::table('indostatistiks')
-        //             ->where('id_listing', $tanggal->id)
-        //             ->update([
-        //                 'listing_date' => $tgl_hasil
-        //             ]);
-        //     }
+        if($tanggals->isNotEmpty()){
+            foreach($tanggals as $tanggal){
+                $tgl_unix = $tanggal->meta_value;
+                $tgl_hasil = date('Y-m-d', $tgl_unix);
+                DB::table('indostatistiks')
+                    ->where('id_listing', $tanggal->id)
+                    ->update([
+                        'listing_date' => $tgl_hasil
+                    ]);
+            }
 
-        //     echo "sukses";
-        // }else{
-        //     echo "empty";
-        // }
+            echo "sukses";
+        }else{
+            echo "empty";
+        }
 
     }
 }
