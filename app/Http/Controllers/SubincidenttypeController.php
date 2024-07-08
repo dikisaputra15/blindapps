@@ -18,7 +18,7 @@ class SubincidenttypeController extends Controller
             ->join('wp_term_taxonomy', 'wp_term_taxonomy.term_taxonomy_id', '=', 'wp_term_relationships.term_taxonomy_id')
             ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
             ->join('wp_posts', 'wp_posts.ID', '=', 'wp_w2gm_locations_relationships.post_id')
-            ->select('wp_w2gm_locations_relationships.post_id', 'wp_terms.name', 'wp_posts.post_date')
+            ->select('wp_w2gm_locations_relationships.id', 'wp_terms.name', 'wp_posts.post_date')
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             ->where(function($query) {
                 $query->where('wp_terms.term_id', 6827)
@@ -120,8 +120,8 @@ class SubincidenttypeController extends Controller
 
         if($sutypes->isNotEmpty()){
                 foreach ($sutypes as $sutype){
-                    DB::table('statistiks')
-                        ->where('post_id_cat', $sutype->post_id)
+                    DB::table('indostatistiks')
+                        ->where('id_listing', $sutype->id)
                         ->update([
                             'sub_incident_type' => $sutype->name
                         ]);

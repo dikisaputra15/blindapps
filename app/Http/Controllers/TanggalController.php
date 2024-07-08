@@ -16,27 +16,33 @@ class TanggalController extends Controller
 
         $tanggals = DB::table('wp_postmeta')
             ->join('wp_posts', 'wp_posts.ID', '=', 'wp_postmeta.post_id')
-            ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date')
+            ->join('wp_w2gm_locations_relationships', 'wp_w2gm_locations_relationships.post_id', '=', 'wp_postmeta.post_id')
+            ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date', 'wp_w2gm_locations_relationships.id')
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             ->where('wp_postmeta.meta_key', '_content_field_89_date_end')
             ->get();
 
+           $no = 1;
+            foreach ($tanggals as $tanggal) {
+                echo $no++ . " " . $tanggal->id . "<br>";
+            } 
 
-        if($tanggals->isNotEmpty()){
-            foreach($tanggals as $tanggal){
-                $tgl_unix = $tanggal->meta_value;
-                $tgl_hasil = date('Y-m-d', $tgl_unix);
-                DB::table('statistiks')
-                    ->where('post_id_cat', $tanggal->post_id)
-                    ->update([
-                        'listing_date' => $tgl_hasil
-                    ]);
-            }
 
-            echo "sukses";
-        }else{
-            echo "empty";
-        }
+        // if($tanggals->isNotEmpty()){
+        //     foreach($tanggals as $tanggal){
+        //         $tgl_unix = $tanggal->meta_value;
+        //         $tgl_hasil = date('Y-m-d', $tgl_unix);
+        //         DB::table('indostatistiks')
+        //             ->where('id_listing', $tanggal->id)
+        //             ->update([
+        //                 'listing_date' => $tgl_hasil
+        //             ]);
+        //     }
+
+        //     echo "sukses";
+        // }else{
+        //     echo "empty";
+        // }
 
     }
 }
