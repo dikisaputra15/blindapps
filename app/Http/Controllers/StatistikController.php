@@ -69,7 +69,7 @@ class StatistikController extends Controller
                 // DB::table('statistiks')->insert($category);
                 $criteria = ['id_listing' => $icat->id];
 
-                Indostatistik::updateOrCreate(
+                Indostatistik::firstOrCreate(
                     $criteria,
                     $category
                 );
