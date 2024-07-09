@@ -13,8 +13,10 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Subincident::class,
         \App\Console\Commands\Socialconflict::class,
         \App\Console\Commands\Weapon::class,
+        \App\Console\Commands\Explosive::class,
         \App\Console\Commands\Actor::class,
         \App\Console\Commands\Actortype::class,
+        \App\Console\Commands\Subactortype::class,
         \App\Console\Commands\Target::class,
         \App\Console\Commands\Targettype::class,
         \App\Console\Commands\Tanggal::class,
@@ -24,27 +26,29 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('task:runcategory')->dailyAt('23:00');
+        $schedule->command('task:runcategory')->everyTenMinutes();;
 
-        $schedule->command('task:runincident')->dailyAt('23:05');
+        $schedule->command('task:runincident')->everyFifteenMinutes();
 
-        $schedule->command('task:runsubincident')->dailyAt('23:10');
+        $schedule->command('task:runsubincident')->everyFifteenMinutes();
 
-        $schedule->command('task:runsocialconflict')->dailyAt('23:15');
+        $schedule->command('task:runsocialconflict')->everyFifteenMinutes();
 
-        $schedule->command('task:runweapon')->dailyAt('23:20');
+        $schedule->command('task:runweapon')->everyFifteenMinutes();
 
-        $schedule->command('task:runactor')->dailyAt('23:25');
+        $schedule->command('task:runactor')->everyFifteenMinutes();
 
-        $schedule->command('task:runactortype')->dailyAt('23:30');
+        $schedule->command('task:runactortype')->everyFifteenMinutes();
 
-        $schedule->command('task:runtarget')->dailyAt('23:35');
+        $schedule->command('task:runtarget')->everyFifteenMinutes();
 
-        $schedule->command('task:runtargettype')->dailyAt('23:40');
+        $schedule->command('task:runtargettype')->everyFifteenMinutes();
 
-        $schedule->command('task:runtanggal')->dailyAt('23:45');
+        $schedule->command('task:runtanggal')->everyFifteenMinutes();
 
-        $schedule->command('task:runsubactortype')->dailyAt('23:50');
+        $schedule->command('task:runsubactortype')->everyFifteenMinutes();
+
+        $schedule->command('task:runexplosive')->everyFifteenMinutes();
     }
 
     /**

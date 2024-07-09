@@ -45,7 +45,12 @@ class SocialconflictController extends Controller
                         ->orWhere('wp_terms.term_id', 16758)
                         ->orWhere('wp_terms.term_id', 16756)
                         ->orWhere('wp_terms.term_id', 16757)
-                        ->orWhere('wp_terms.term_id', 16755);
+                        ->orWhere('wp_terms.term_id', 16755)
+                        ->orWhere('wp_terms.term_id', 18088)
+                        ->orWhere('wp_terms.term_id', 18089)
+                        ->orWhere('wp_terms.term_id', 18090)
+                        ->orWhere('wp_terms.term_id', 18091)
+                        ->orWhere('wp_terms.term_id', 18092);
                      })
             ->get();
 
