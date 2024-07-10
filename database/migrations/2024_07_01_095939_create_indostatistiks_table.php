@@ -38,7 +38,6 @@ return new class extends Migration
             $table->integer('number_of_fatalities');
             $table->text('additional_info');
             $table->date('date_posting');
-            $table->timestamps();
         });
     }
 
