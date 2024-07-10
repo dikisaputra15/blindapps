@@ -9,5 +9,7 @@ class Indostatistik extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $guarded = [];
 }
