@@ -57,7 +57,6 @@ class SubincidenttypeController extends Controller
                         ->orwhere('wp_terms.term_id', 461)
                         ->orwhere('wp_terms.term_id', 460)
                         ->orwhere('wp_terms.term_id', 16207)
-                        ->orwhere('wp_terms.term_id', 463)
                         ->orwhere('wp_terms.term_id', 467)
                         ->orwhere('wp_terms.term_id', 464)
                         ->orwhere('wp_terms.term_id', 459)
@@ -123,7 +122,8 @@ class SubincidenttypeController extends Controller
                         ->orwhere('wp_terms.term_id', 18086)
                         ->orwhere('wp_terms.term_id', 18087)
                         ->orwhere('wp_terms.term_id', 18095)
-                        ->orwhere('wp_terms.term_id', 18096);
+                        ->orwhere('wp_terms.term_id', 18096)
+                        ->orwhere('wp_terms.term_id', 18605);
             })
             ->get();
 

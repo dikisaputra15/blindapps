@@ -26,7 +26,9 @@ class StatistikController extends Controller
             ->where(function($query) {
                 $query->where('wp_terms.term_id', 392)
                       ->orWhere('wp_terms.term_id', 433)
-                      ->orWhere('wp_terms.term_id', 391);
+                      ->orWhere('wp_terms.term_id', 391)
+                      ->orWhere('wp_terms.term_id', 18679)
+                      ->orWhere('wp_terms.term_id', 436);
             })
             ->get();
 
