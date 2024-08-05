@@ -46,7 +46,7 @@ class SubactortypeController extends Controller
 
         if($subactortypes->isNotEmpty()){
             foreach ($subactortypes as $subactortype){
-                DB::table('indostatistiks')
+                DB::table('indostatistiknews')
                     ->where('id_listing', $subactortype->id)
                     ->update([
                         'sub_actor_type' => $subactortype->name

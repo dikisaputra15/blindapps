@@ -109,7 +109,7 @@ class TargetController extends Controller
 
         if($targets->isNotEmpty()){
             foreach ($targets as $target){
-                DB::table('indostatistiks')
+                DB::table('indostatistiknews')
                     ->where('id_listing', $target->id)
                     ->update([
                         'target' => $target->name

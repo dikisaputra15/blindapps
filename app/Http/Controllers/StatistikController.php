@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Indostatistik;
+use App\Models\Indostatistiknew;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -61,6 +61,7 @@ class StatistikController extends Controller
                     'sub_actor_type' => NULL,
                     'target' => NULL,
                     'target_type' => NULL,
+                    'violence' => NULL,
                     'number_of_incident' => $icat->number_of_incident,
                     'number_of_injuries' => $icat->number_of_injuries,
                     'number_of_fatalities' => $icat->number_of_fatalities,
@@ -71,7 +72,7 @@ class StatistikController extends Controller
                 // DB::table('statistiks')->insert($category);
                 $criteria = ['id_listing' => $icat->id];
 
-                Indostatistik::firstOrCreate(
+                Indostatistiknew::firstOrCreate(
                     $criteria,
                     $category
                 );

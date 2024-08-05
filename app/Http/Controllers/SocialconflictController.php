@@ -57,7 +57,7 @@ class SocialconflictController extends Controller
 
             if($sconflicts->isNotEmpty()){
                 foreach ($sconflicts as  $sconflict){
-                    DB::table('indostatistiks')
+                    DB::table('indostatistiknews')
                         ->where('id_listing', $sconflict->id)
                         ->update([
                             'social_conflict' => $sconflict->name

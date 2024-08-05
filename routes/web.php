@@ -29,3 +29,4 @@ Route::get('/targettype', [App\Http\Controllers\TargettypeController::class, 'in
 Route::get('/tanggal', [App\Http\Controllers\TanggalController::class, 'index']);
 Route::get('/subactortype', [App\Http\Controllers\SubactortypeController::class, 'index']);
 Route::get('/explosivetype', [App\Http\Controllers\ExplosivetypeController::class, 'index']);
+Route::get('/violence', [App\Http\Controllers\ViolenceController::class, 'index']);

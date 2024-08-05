@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('indostatistiknews', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('id_listing');
             $table->bigInteger('post_id_cat');
             $table->date('listing_date')->nullable();

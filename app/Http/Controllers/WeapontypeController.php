@@ -43,7 +43,7 @@ class WeapontypeController extends Controller
 
         if($weapontypes->isNotEmpty()){
             foreach ($weapontypes as $weapontype){
-                DB::table('indostatistiks')
+                DB::table('indostatistiknews')
                     ->where('id_listing', $weapontype->id)
                     ->update([
                         'weapon_type' => $weapontype->name

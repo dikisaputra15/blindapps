@@ -41,7 +41,7 @@ class ExplosivetypeController extends Controller
 
         if($explosivetypes->isNotEmpty()){
             foreach ($explosivetypes as  $explosivetype){
-                DB::table('indostatistiks')
+                DB::table('indostatistiknews')
                     ->where('id_listing', $explosivetype->id)
                     ->update([
                         'explosive_type' => $explosivetype->name

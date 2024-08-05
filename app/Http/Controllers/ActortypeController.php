@@ -84,7 +84,7 @@ class ActortypeController extends Controller
 
         if($actortypes->isNotEmpty()){
             foreach ($actortypes as $actortype){
-                DB::table('indostatistiks')
+                DB::table('indostatistiknews')
                     ->where('id_listing', $actortype->id)
                     ->update([
                         'actor_type' => $actortype->name

@@ -53,7 +53,7 @@ class IncidenttypeController extends Controller
 
             if($itypes->isNotEmpty()){
                 foreach ($itypes as $itype){
-                    DB::table('indostatistiks')
+                    DB::table('indostatistiknews')
                         ->where('id_listing', $itype->id)
                         ->update([
                             'incident_type' => $itype->name

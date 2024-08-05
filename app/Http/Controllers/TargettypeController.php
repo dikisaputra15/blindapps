@@ -321,7 +321,7 @@ class TargettypeController extends Controller
 
                 if($tartypes->isNotEmpty()){
                     foreach ($tartypes as $tartype){
-                        DB::table('indostatistiks')
+                        DB::table('indostatistiknews')
                             ->where('id_listing', $tartype->id)
                             ->update([
                                 'target_type' => $tartype->name

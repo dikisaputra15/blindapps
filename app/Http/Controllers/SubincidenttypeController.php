@@ -129,7 +129,7 @@ class SubincidenttypeController extends Controller
 
         if($sutypes->isNotEmpty()){
                 foreach ($sutypes as $sutype){
-                    DB::table('indostatistiks')
+                    DB::table('indostatistiknews')
                         ->where('id_listing', $sutype->id)
                         ->update([
                             'sub_incident_type' => $sutype->name
