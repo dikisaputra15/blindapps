@@ -32,8 +32,10 @@ class ViolenceController extends Controller
             foreach($violences as $violence){
                 if($violence->meta_value == 1){
                     $viol = 'Violent';
-                }else{
+                }elseif($violence->meta_value == 2){
                     $viol = 'Non-violent';
+                }else{
+                    $viol = NULL;
                 }
                 DB::table('indostatistiknews')
                     ->where('id_listing', $violence->id)
