@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('province_name');
             $table->string('country');
             $table->string('location');
-            $table->string('incident_categories');
+            $table->string('main_incident');
+            $table->string('incident_category')->nullable();
             $table->string('incident_type')->nullable();
             $table->string('sub_incident_type')->nullable();
-            $table->string('social_conflict')->nullable();
             $table->string('weapon_type')->nullable();
             $table->string('explosive_type')->nullable();
             $table->string('actor')->nullable();

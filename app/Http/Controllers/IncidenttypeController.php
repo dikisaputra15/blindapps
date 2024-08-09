@@ -48,7 +48,45 @@ class IncidenttypeController extends Controller
                       ->orWhere('wp_terms.term_id', 18075)
                       ->orWhere('wp_terms.term_id', 18076)
                       ->orWhere('wp_terms.term_id', 18077)
-                      ->orWhere('wp_terms.term_id', 18078);
+                      ->orWhere('wp_terms.term_id', 18078)
+                      ->orwhere('wp_terms.term_id', 460)
+                      ->orwhere('wp_terms.term_id', 459)
+                      ->orwhere('wp_terms.term_id', 16741)
+                      ->orwhere('wp_terms.term_id', 16742)
+                      ->orwhere('wp_terms.term_id', 464)
+                      ->orwhere('wp_terms.term_id', 465)
+                      ->orwhere('wp_terms.term_id', 458)
+                      ->orwhere('wp_terms.term_id', 16190)
+                      ->orwhere('wp_terms.term_id', 16189)
+                      ->orwhere('wp_terms.term_id', 462)
+                      ->orwhere('wp_terms.term_id', 16744)
+                      ->orwhere('wp_terms.term_id', 16745)
+                      ->orwhere('wp_terms.term_id', 16746)
+                      ->orwhere('wp_terms.term_id', 16747)
+                      ->orwhere('wp_terms.term_id', 17723)
+                      ->orwhere('wp_terms.term_id', 17755)
+                      ->orwhere('wp_terms.term_id', 16748)
+                      ->orwhere('wp_terms.term_id', 461)
+                      ->orwhere('wp_terms.term_id', 16191)
+                      ->orwhere('wp_terms.term_id', 18650)
+                      ->orwhere('wp_terms.term_id', 5418)
+                      ->orwhere('wp_terms.term_id', 7196)
+                      ->orwhere('wp_terms.term_id', 18605)
+                      ->orwhere('wp_terms.term_id', 467)
+                      ->orwhere('wp_terms.term_id', 16770)
+                      ->orwhere('wp_terms.term_id', 466)
+                      ->orwhere('wp_terms.term_id', 16772)
+                      ->orwhere('wp_terms.term_id', 16773)
+                      ->orwhere('wp_terms.term_id', 16776)
+                      ->orwhere('wp_terms.term_id', 16777)
+                      ->orwhere('wp_terms.term_id', 16778)
+                      ->orwhere('wp_terms.term_id', 17725)
+                      ->orwhere('wp_terms.term_id', 17756)
+                      ->orwhere('wp_terms.term_id', 17757)
+                      ->orwhere('wp_terms.term_id', 16779)
+                      ->orwhere('wp_terms.term_id', 16780)
+                      ->orwhere('wp_terms.term_id', 16781)
+                      ->orwhere('wp_terms.term_id', 16207);
             })
             ->get();
 
@@ -58,7 +96,7 @@ class IncidenttypeController extends Controller
                     DB::table('indostatistiknews')
                         ->where('id_listing', $itype->id)
                         ->update([
-                            'incident_type' => $itype->name
+                            'incident_category' => $itype->name
                         ]);
                 }
                 echo "sukses";

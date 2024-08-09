@@ -25,36 +25,17 @@ class SocialconflictController extends Controller
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             // ->whereBetween(DB::raw('DATE(wp_posts.post_date)'), [$tgl_coba[0], $tgl_coba[1]])
             ->where(function($query) {
-                $query->where('wp_terms.term_id', 16200)
-                        ->orWhere('wp_terms.term_id', 16203)
-                        ->orWhere('wp_terms.term_id', 16204)
-                        ->orWhere('wp_terms.term_id', 16197)
-                        ->orWhere('wp_terms.term_id', 16205)
-                        ->orWhere('wp_terms.term_id', 16199)
-                        ->orWhere('wp_terms.term_id', 16194)
-                        ->orWhere('wp_terms.term_id', 16196)
-                        ->orWhere('wp_terms.term_id', 16202)
-                        ->orWhere('wp_terms.term_id', 16206)
-                        ->orWhere('wp_terms.term_id', 16198)
-                        ->orWhere('wp_terms.term_id', 16195)
-                        ->orWhere('wp_terms.term_id', 16201)
-                        ->orWhere('wp_terms.term_id', 16751)
-                        ->orWhere('wp_terms.term_id', 16754)
-                        ->orWhere('wp_terms.term_id', 16752)
-                        ->orWhere('wp_terms.term_id', 16750)
-                        ->orWhere('wp_terms.term_id', 16753)
-                        ->orWhere('wp_terms.term_id', 16749)
-                        ->orWhere('wp_terms.term_id', 17034)
-                        ->orWhere('wp_terms.term_id', 16758)
-                        ->orWhere('wp_terms.term_id', 16756)
-                        ->orWhere('wp_terms.term_id', 16757)
-                        ->orWhere('wp_terms.term_id', 16755)
-                        ->orWhere('wp_terms.term_id', 18088)
+                $query->where('wp_terms.term_id', 18088)
                         ->orWhere('wp_terms.term_id', 18089)
                         ->orWhere('wp_terms.term_id', 18090)
                         ->orWhere('wp_terms.term_id', 18091)
                         ->orWhere('wp_terms.term_id', 18092)
-                        ->orWhere('wp_terms.term_id', 463);
+                        ->orwhere('wp_terms.term_id', 18082)
+                        ->orwhere('wp_terms.term_id', 18629)
+                        ->orwhere('wp_terms.term_id', 18630)
+                        ->orwhere('wp_terms.term_id', 18086)
+                        ->orwhere('wp_terms.term_id', 18083)
+                        ->orwhere('wp_terms.term_id', 18631);
                      })
             ->get();
 
@@ -63,7 +44,7 @@ class SocialconflictController extends Controller
                     DB::table('indostatistiknews')
                         ->where('id_listing', $sconflict->id)
                         ->update([
-                            'social_conflict' => $sconflict->name
+                            'sub_incident_type' => $sconflict->name
                         ]);
                 }
                 echo "sukses";
