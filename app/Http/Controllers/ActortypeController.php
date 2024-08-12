@@ -81,7 +81,8 @@ class ActortypeController extends Controller
                 ->orWhere('wp_terms.term_id', 18140)
                 ->orWhere('wp_terms.term_id', 16932)
                 ->orWhere('wp_terms.term_id', 18136)
-                ->orWhere('wp_terms.term_id', 18142);
+                ->orWhere('wp_terms.term_id', 18142)
+                ->orWhere('wp_terms.term_id', 16154);
             })
         ->get();
 
