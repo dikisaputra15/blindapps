@@ -42,6 +42,7 @@ class StatistikController extends Controller
         if($icats->isNotEmpty()){
             foreach ($icats as $icat){
                 $loc = $icat->map_coords_1 . "," . " " . $icat->map_coords_2;
+        
                 $category = [
                     'id_listing' => $icat->id,
                     'post_id_cat' => $icat->ID,
@@ -74,10 +75,17 @@ class StatistikController extends Controller
                 // DB::table('statistiks')->insert($category);
                 $criteria = ['id_listing' => $icat->id];
 
-                Indostatistiknew::firstOrCreate(
+             $inp =  Indostatistiknew::firstOrCreate(
                     $criteria,
                     $category
                 );
+
+                if($inp){
+                    DB::table('indostatistiknews')
+                        ->where('id_listing', '!=', $icat->id)
+                        ->where('post_id_cat', '=', $icat->ID)
+                        ->delete();
+                }
             }
             echo "sukses";
         }else{
