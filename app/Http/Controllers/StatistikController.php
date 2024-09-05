@@ -75,17 +75,11 @@ class StatistikController extends Controller
                 // DB::table('statistiks')->insert($category);
                 $criteria = ['id_listing' => $icat->id];
 
-             $inp =  Indostatistiknew::firstOrCreate(
+             Indostatistiknew::firstOrCreate(
                     $criteria,
                     $category
                 );
 
-                if($inp){
-                    DB::table('indostatistiknews')
-                        ->where('id_listing', '!=', $icat->id)
-                        ->where('post_id_cat', '=', $icat->ID)
-                        ->delete();
-                }
             }
             echo "sukses";
         }else{
