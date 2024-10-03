@@ -33,7 +33,7 @@ class Violence extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/violence');
+        $response = Http::get('https://id.code69.my.id/violence');
 
         if ($response->successful()) {
             $this->info('Target Type accessed successfully.');

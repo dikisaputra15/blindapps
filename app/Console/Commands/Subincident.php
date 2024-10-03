@@ -34,7 +34,7 @@ class Subincident extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/subincidenttype');
+        $response = Http::get('https://id.code69.my.id/subincidenttype');
 
         if ($response->successful()) {
             $this->info('Sub Incident accessed successfully.');

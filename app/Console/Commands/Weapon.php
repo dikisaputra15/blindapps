@@ -34,7 +34,7 @@ class Weapon extends Command
 
     public function handle()
     {
-        $response = Http::get('https://dev1.code69.my.id/weapontype');
+        $response = Http::get('https://id.code69.my.id/weapontype');
 
         if ($response->successful()) {
             $this->info('Weapon accessed successfully.');
