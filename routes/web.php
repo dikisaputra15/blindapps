@@ -43,3 +43,5 @@ Route::get('/vested', [App\Http\Controllers\VestedController::class, 'index']);
 Route::get('/time', [App\Http\Controllers\TimeController::class, 'index']);
 Route::get('/numberprotest', [App\Http\Controllers\NumberprotestController::class, 'index']);
 Route::get('/issue', [App\Http\Controllers\IssueController::class, 'index']);
+Route::get('/tanggalstart', [App\Http\Controllers\TanggalstartController::class, 'index']);
+Route::get('/timeend', [App\Http\Controllers\TimeendController::class, 'index']);

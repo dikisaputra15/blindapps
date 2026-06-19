@@ -34,6 +34,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Time::class,
         \App\Console\Commands\Numberprotest::class,
         \App\Console\Commands\Issue::class,
+        \App\Console\Commands\Tanggalstart::class,
     ];
     /**
      * Define the application's command schedule.
@@ -91,6 +92,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runnumberprotest')->everyFifteenMinutes();
 
         $schedule->command('task:runissue')->everyFifteenMinutes();
+
+        $schedule->command('task:runtanggalstart')->everyFifteenMinutes();
     }
 
     /**
