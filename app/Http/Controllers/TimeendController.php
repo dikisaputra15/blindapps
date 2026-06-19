@@ -45,7 +45,7 @@ class TimeendController extends Controller
 
             foreach ($items as $item) {
 
-                $listingId = $item->id_listing;
+                $listingId = $item->listing_id;
 
                 if ($item->meta_key == '_content_field_210') {
 
