@@ -74,6 +74,7 @@ class StatistikController extends Controller
                     'article_link' => NULL,
                     'number_of_protest' => NULL,
                     'issue' => NULL,
+                    'stance' => NULL,
                     'additional_info' => $icat->additional_info,
                     'date_posting' => $icat->post_date
                 ];

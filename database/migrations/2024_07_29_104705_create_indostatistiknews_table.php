@@ -41,6 +41,7 @@ return new class extends Migration
             $table->text('article_link')->nullable();
             $table->string('number_of_protest')->nullable();
             $table->text('issue')->nullable();
+            $table->text('stance')->nullable();
             $table->text('additional_info');
             $table->date('date_posting');
         });

@@ -45,3 +45,4 @@ Route::get('/numberprotest', [App\Http\Controllers\NumberprotestController::clas
 Route::get('/issue', [App\Http\Controllers\IssueController::class, 'index']);
 Route::get('/tanggalstart', [App\Http\Controllers\TanggalstartController::class, 'index']);
 Route::get('/timeend', [App\Http\Controllers\TimeendController::class, 'index']);
+Route::get('/stance', [App\Http\Controllers\StanceController::class, 'index']);
