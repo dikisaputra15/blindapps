@@ -35,14 +35,14 @@ class SeparatistgroupController extends Controller
             foreach($violences as $violence){
                 if($violence->meta_value == 2){
                     $viol = 'Free Papua Organization (OPM)';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'West Papua National Liberation Army (TPNPB)';
-                }elseif($violence->meta_value == 3){
-                    $viol = 'Other';
                 }elseif($violence->meta_value == 5){
                     $viol = 'West Papua National Committee (KNPB)';
+                }elseif($violence->meta_value == 1){
+                    $viol = 'West Papua National Liberation Army (TPNPB)';
                 }elseif($violence->meta_value == 4){
-                    $viol = 'Unknown/Unclaimed responsibility';
+                    $viol = 'Unconfirmed/Unclear';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Other';
                 }else{
                     $viol = NULL;
                 }

@@ -33,12 +33,20 @@ class GovermentController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 4){
+                if($violence->meta_value == 5){
+                    $viol = 'Border Guard';
+                }elseif($violence->meta_value == 4){
                     $viol = 'Intelligence';
                 }elseif($violence->meta_value == 2){
                     $viol = 'Military';
+                }elseif($violence->meta_value == 6){
+                    $viol = 'Militias/Paramilitary Forces';
                 }elseif($violence->meta_value == 1){
                     $viol = 'Police';
+                }elseif($violence->meta_value == 7){
+                    $viol = 'Public Order Agency (Satpol PP)';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
                 }

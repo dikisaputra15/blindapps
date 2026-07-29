@@ -15,7 +15,6 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Weapon::class,
         \App\Console\Commands\Explosive::class,
         \App\Console\Commands\Actor::class,
-        \App\Console\Commands\Actortype::class,
         \App\Console\Commands\Subactortype::class,
         \App\Console\Commands\Target::class,
         \App\Console\Commands\Targettype::class,
@@ -36,6 +35,34 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Issue::class,
         \App\Console\Commands\Tanggalstart::class,
         \App\Console\Commands\Stance::class,
+        \App\Console\Commands\Actoractivist::class,
+        \App\Console\Commands\Actorage::class,
+        \App\Console\Commands\Actorcentralgov::class,
+        \App\Console\Commands\Actorforeign::class,
+        \App\Console\Commands\Actorgender::class,
+        \App\Console\Commands\Actorintel::class,
+        \App\Console\Commands\Actorlocalgov::class,
+        \App\Console\Commands\Actorreggov::class,
+        \App\Console\Commands\Firearmtype::class,
+        \App\Console\Commands\Groupnumber::class,
+        \App\Console\Commands\Grouporgan::class,
+        \App\Console\Commands\Promotor::class,
+        \App\Console\Commands\Targetactivist::class,
+        \App\Console\Commands\Targetage::class,
+        \App\Console\Commands\Targetbusiness::class,
+        \App\Console\Commands\Targetcentralgov::class,
+        \App\Console\Commands\Targetcommunity::class,
+        \App\Console\Commands\Targetforeigngov::class,
+        \App\Console\Commands\Targetgender::class,
+        \App\Console\Commands\Targetgov::class,
+        \App\Console\Commands\Targetintel::class,
+        \App\Console\Commands\Targetlocalgov::class,
+        \App\Console\Commands\Targetmil::class,
+        \App\Console\Commands\Targetpolice::class,
+        \App\Console\Commands\Targetreggov::class,
+        \App\Console\Commands\Targetseparatist::class,
+        \App\Console\Commands\Targetterorist::class,
+        \App\Console\Commands\Targettypefacility::class,
     ];
     /**
      * Define the application's command schedule.
@@ -53,8 +80,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runweapon')->everyFifteenMinutes();
 
         $schedule->command('task:runactor')->everyFifteenMinutes();
-
-        $schedule->command('task:runactortype')->everyFifteenMinutes();
 
         $schedule->command('task:runtarget')->everyFifteenMinutes();
 
@@ -97,6 +122,35 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runtanggalstart')->everyFifteenMinutes();
 
         $schedule->command('task:runstance')->everyFifteenMinutes();
+
+        $schedule->command('task:runactoractivist')->everyFifteenMinutes();
+        $schedule->command('task:runactorage')->everyFifteenMinutes();
+        $schedule->command('task:runactorcentralgov')->everyFifteenMinutes();
+        $schedule->command('task:runactorforeign')->everyFifteenMinutes();
+        $schedule->command('task:runactorgender')->everyFifteenMinutes();
+        $schedule->command('task:runactorintel')->everyFifteenMinutes();
+        $schedule->command('task:runactorlocalgov')->everyFifteenMinutes();
+        $schedule->command('task:runactorreggov')->everyFifteenMinutes();
+        $schedule->command('task:runfirearmtype')->everyFifteenMinutes();
+        $schedule->command('task:rungroupnumber')->everyFifteenMinutes();
+        $schedule->command('task:rungrouporgan')->everyFifteenMinutes();
+        $schedule->command('task:runpromotor')->everyFifteenMinutes();
+        $schedule->command('task:runtargetactivist')->everyFifteenMinutes();
+        $schedule->command('task:runtargetage')->everyFifteenMinutes();
+        $schedule->command('task:runtargetbusiness')->everyFifteenMinutes();
+        $schedule->command('task:runtargetcentralgov')->everyFifteenMinutes();
+        $schedule->command('task:runtargetcommunity')->everyFifteenMinutes();
+        $schedule->command('task:runtargetforeigngov')->everyFifteenMinutes();
+        $schedule->command('task:runtargetgender')->everyFifteenMinutes();
+        $schedule->command('task:runtargetgov')->everyFifteenMinutes();
+        $schedule->command('task:runtargetintel')->everyFifteenMinutes();
+        $schedule->command('task:runtargetlocalgov')->everyFifteenMinutes();
+        $schedule->command('task:runtargetmil')->everyFifteenMinutes();
+        $schedule->command('task:runtargetpolice')->everyFifteenMinutes();
+        $schedule->command('task:runtargetreggov')->everyFifteenMinutes();
+        $schedule->command('task:runtargetseparatist')->everyFifteenMinutes();
+        $schedule->command('task:runtargetterorist')->everyFifteenMinutes();
+        $schedule->command('task:runtargettypefacility')->everyFifteenMinutes();
     }
 
     /**

@@ -36,39 +36,39 @@ class TeroristgroupController extends Controller
                 if($violence->meta_value == 11){
                     $viol = 'Al Qaeda Indonesia (AQI)';
                 }elseif($violence->meta_value == 20){
-                    $viol = 'al Qaeda in the Arabian Peninsula (AQAP)';
-                }elseif($violence->meta_value == 3){
-                    $viol = 'Jemaah Islamiyah (JI)';
-                }elseif($violence->meta_value == 17){
-                    $viol = 'Mujahideen in Western Indonesia (MIB)';
+                    $viol = 'Al Qaeda in the Arabian Peninsula (AQAP)';
                 }elseif($violence->meta_value == 12){
                     $viol = 'Angkatan Mujahideen Islam Nusantara (AMIN)';
-                }elseif($violence->meta_value == 5){
-                    $viol = 'Khilafatul Muslimin';
-                }elseif($violence->meta_value == 18){
-                    $viol = 'Ring Banten';
                 }elseif($violence->meta_value == 13){
                     $viol = 'Darul Islam';
-                }elseif($violence->meta_value == 14){
-                    $viol = 'Komando Jihad';
-                }elseif($violence->meta_value == 19){
-                    $viol = 'Team Hisbah';
                 }elseif($violence->meta_value == 10){
                     $viol = 'Islamic State of Iraq and Syria (ISIS)';
-                }elseif($violence->meta_value == 15){
-                    $viol = 'Laskar Jihad';
-                }elseif($violence->meta_value == 9){
-                    $viol = 'Unknown/Unclaimed responsibility';
                 }elseif($violence->meta_value == 1){
                     $viol = 'Jamaah Ansharut Daulah (JAD)';
-                }elseif($violence->meta_value == 16){
-                    $viol = 'Laskar Jundullah';
-                }elseif($violence->meta_value == 8){
-                    $viol = 'Other';
                 }elseif($violence->meta_value == 2){
                     $viol = 'Jamaah Ansharut Tauhid (JAT)';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Jemaah Islamiyah (JI)';
+                }elseif($violence->meta_value == 5){
+                    $viol = 'Khilafatul Muslimin';
+                }elseif($violence->meta_value == 14){
+                    $viol = 'Komando Jihad';
+                }elseif($violence->meta_value == 15){
+                    $viol = 'Laskar Jihad';
+                }elseif($violence->meta_value == 16){
+                    $viol = 'Laskar Jundullah';
                 }elseif($violence->meta_value == 4){
                     $viol = 'Mujahedeen in Eastern Indonesia (MIT)';
+                }elseif($violence->meta_value == 17){
+                    $viol = 'Mujahideen in Western Indonesia (MIB)';
+                }elseif($violence->meta_value == 18){
+                    $viol = 'Ring Banten';
+                }elseif($violence->meta_value == 19){
+                    $viol = 'Team Hisbah';
+                }elseif($violence->meta_value == 9){
+                    $viol = 'Unknown/ Unclaimed responsibility';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
                 }

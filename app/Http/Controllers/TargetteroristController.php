@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class MilitarytypeController extends Controller
+
+class TargetteroristController extends Controller
 {
-    public function index()
+     public function index()
     {
         // ini_set('max_execution_time', 3600);
 
@@ -22,7 +23,7 @@ class MilitarytypeController extends Controller
             ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date', 'wp_w2gm_locations_relationships.id')
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             // ->whereBetween(DB::raw('DATE(wp_posts.post_date)'), [$tgl_coba[0], $tgl_coba[1]])
-            ->where('wp_postmeta.meta_key', '_content_field_172')
+            ->where('wp_postmeta.meta_key', '_content_field_239')
             ->get();
 
         //    $no = 1;
@@ -33,25 +34,39 @@ class MilitarytypeController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 3){
-                    $viol = 'Air Force';
-                }elseif($violence->meta_value == 4){
-                    $viol = 'Air Force SF';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'Army';
+                if($violence->meta_value == 1){
+                    $viol = 'Al Qaeda Indonesia (AQI)';
                 }elseif($violence->meta_value == 2){
-                    $viol = 'Army SF';
-                }elseif($violence->meta_value == 7){
-                    $viol = 'Marines';
-                }elseif($violence->meta_value == 8){
-                    $viol = 'Marines SF';
+                    $viol = 'Al Qaeda in the Arabian Peninsula (AQAP)';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Angkatan Mujahideen Islam Nusantara (AMIN)';
+                }elseif($violence->meta_value == 4){
+                    $viol = 'Darul Islam';
                 }elseif($violence->meta_value == 5){
-                    $viol = 'Navy';
+                    $viol = 'Islamic State of Iraq and Syria (ISIS)';
                 }elseif($violence->meta_value == 6){
-                    $viol = 'Navy SF';
+                    $viol = 'Jamaah Ansharut Daulah (JAD)';
+                }elseif($violence->meta_value == 7){
+                    $viol = 'Jamaah Ansharut Tauhid (JAT)';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Jemaah Islamiyah (JI)';
                 }elseif($violence->meta_value == 9){
-                    $viol = 'Special Operation Command (Koopsus)';
+                    $viol = 'Khilafatul Muslimin';
                 }elseif($violence->meta_value == 10){
+                    $viol = 'Komando Jihad';
+                }elseif($violence->meta_value == 11){
+                    $viol = 'Laskar Jihad';
+                }elseif($violence->meta_value == 12){
+                    $viol = 'Laskar Jundullah';
+                }elseif($violence->meta_value == 13){
+                    $viol = 'Mujahedeen in Eastern Indonesia (MIT)';
+                }elseif($violence->meta_value == 14){
+                    $viol = 'Mujahideen in Western Indonesia (MIB)';
+                }elseif($violence->meta_value == 15){
+                    $viol = 'Ring Banten';
+                }elseif($violence->meta_value == 16){
+                    $viol = 'Team Hisbah';
+                }elseif($violence->meta_value == 17){
                     $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
@@ -59,7 +74,7 @@ class MilitarytypeController extends Controller
                 DB::table('indostatistiknews')
                     ->where('id_listing', $violence->id)
                     ->update([
-                        'sub_actor_type' => $viol
+                        'sub_target' => $viol
                     ]);
             }
 

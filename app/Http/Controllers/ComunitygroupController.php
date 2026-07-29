@@ -34,17 +34,21 @@ class ComunitygroupController extends Controller
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
                 if($violence->meta_value == 3){
-                    $viol = 'Ethnic/Cultural Group';
-                }elseif($violence->meta_value == 5){
-                    $viol = 'Martial Arts Group';
-                }elseif($violence->meta_value == 2){
-                    $viol = 'Religious Group';
+                    $viol = 'Cultural Group';
+                }elseif($violence->meta_value == 7){
+                    $viol = 'Ethnic Group';
                 }elseif($violence->meta_value == 1){
                     $viol = 'Local Community Group';
+                }elseif($violence->meta_value == 5){
+                    $viol = 'Martial Arts Group';
                 }elseif($violence->meta_value == 4){
                     $viol = 'Mass Organization';
+                }elseif($violence->meta_value == 2){
+                    $viol = 'Religious Group';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Sporting Group';
                 }elseif($violence->meta_value == 6){
-                    $viol = 'Other';
+                    $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
                 }

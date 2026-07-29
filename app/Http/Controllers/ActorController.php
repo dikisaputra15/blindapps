@@ -33,34 +33,60 @@ class ActorController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 32){
+                if($violence->meta_value == 33){
+                    $viol = 'Activists';
+                }elseif($violence->meta_value == 32){
                     $viol = 'Business Entity';
-                }elseif($violence->meta_value == 27){
-                    $viol = 'Foreign Government (A)';
-                }elseif($violence->meta_value == 6){
-                    $viol = 'Terrorist Group';
                 }elseif($violence->meta_value == 3){
                     $viol = 'Central Government (A)';
-                }elseif($violence->meta_value == 4){
-                    $viol = 'Government Security Agency';
-                }elseif($violence->meta_value == 9){
-                    $viol = 'Vested Interest/Stakeholder Group';
+                }elseif($violence->meta_value == 34){
+                    $viol = 'Child/Youth/Student';
                 }elseif($violence->meta_value == 7){
-                    $viol = 'Civilian';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'Local Government (A)';
-                }elseif($violence->meta_value == 20){
-                    $viol = 'Unknown/Unclaimed Responsibility';
+                    $viol = 'Civilian/Local Resident/Individual';
                 }elseif($violence->meta_value == 31){
                     $viol = 'Community Group';
-                }elseif($violence->meta_value == 2){
-                    $viol = 'Provincial Government (A)';
-                }elseif($violence->meta_value == 19){
-                    $viol = 'Other';
+                }elseif($violence->meta_value == 27){
+                    $viol = 'Foreign Government (A)';
+                }elseif($violence->meta_value == 35){
+                    $viol = 'Foreign National';
+                }elseif($violence->meta_value == 4){
+                    $viol = 'Government Security Agency';
+                }elseif($violence->meta_value == 36){
+                    $viol = 'Hard-line/Radicalized group';
+                }elseif($violence->meta_value == 37){
+                    $viol = 'International Activist Group/Organization';
                 }elseif($violence->meta_value == 8){
-                    $viol = 'Crime Group';
+                    $viol = 'Local Criminal/Gang/Group';
+                }elseif($violence->meta_value == 38){
+                    $viol = 'Local Criminal/Gang/Group2';
+                }elseif($violence->meta_value == 1){
+                    $viol = 'Local Government (A)';
+                }elseif($violence->meta_value == 39){
+                    $viol = 'Mass Organization';
+                }elseif($violence->meta_value == 40){
+                    $viol = 'Motorcycle Gang';
+                }elseif($violence->meta_value == 41){
+                    $viol = 'NGO';
+                }elseif($violence->meta_value == 42){
+                    $viol = 'Organized Crime Group';
+                }elseif($violence->meta_value == 43){
+                    $viol = 'Political Party/ Wing Group';
+                }elseif($violence->meta_value == 2){
+                    $viol = 'Regional Government';
+                }elseif($violence->meta_value == 44){
+                    $viol = 'Religious Group';
                 }elseif($violence->meta_value == 5){
                     $viol = 'Separatist Group';
+                }elseif($violence->meta_value == 6){
+                    $viol = 'Terrorist Group';
+                }elseif($violence->meta_value == 45){
+                    $viol = 'Union/Labor Group';
+                }elseif($violence->meta_value == 9){
+                    $viol = 'Vested Interest/Stakeholder Group';
+                }elseif($violence->meta_value == 20){
+                    $viol = 'Unconfirmed/Unclear';
+                }elseif($violence->meta_value == 19){
+                    $viol = 'Other (A)';
                 }else{
                     $viol = NULL;
                 }

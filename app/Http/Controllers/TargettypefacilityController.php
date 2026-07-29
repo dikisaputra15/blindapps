@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class MilitarytypeController extends Controller
+class TargettypefacilityController extends Controller
 {
     public function index()
     {
@@ -22,7 +22,7 @@ class MilitarytypeController extends Controller
             ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date', 'wp_w2gm_locations_relationships.id')
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             // ->whereBetween(DB::raw('DATE(wp_posts.post_date)'), [$tgl_coba[0], $tgl_coba[1]])
-            ->where('wp_postmeta.meta_key', '_content_field_172')
+            ->where('wp_postmeta.meta_key', '_content_field_221')
             ->get();
 
         //    $no = 1;
@@ -33,25 +33,33 @@ class MilitarytypeController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 3){
-                    $viol = 'Air Force';
-                }elseif($violence->meta_value == 4){
-                    $viol = 'Air Force SF';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'Army';
+                if($violence->meta_value == 1){
+                    $viol = 'Public (School, Medical, Utilities, etc.)';
                 }elseif($violence->meta_value == 2){
-                    $viol = 'Army SF';
-                }elseif($violence->meta_value == 7){
-                    $viol = 'Marines';
-                }elseif($violence->meta_value == 8){
-                    $viol = 'Marines SF';
+                    $viol = 'Bases';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Building Infrastructure (Power Plant, Airport, Port, etc.)';
+                }elseif($violence->meta_value == 4){
+                    $viol = 'Checkpoints';
                 }elseif($violence->meta_value == 5){
-                    $viol = 'Navy';
+                    $viol = 'Commercial (Business, Industrial, Manufacturing, etc.)';
                 }elseif($violence->meta_value == 6){
-                    $viol = 'Navy SF';
+                    $viol = 'Factory/Warehouse';
+                }elseif($violence->meta_value == 7){
+                    $viol = 'Government Office';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Housing';
                 }elseif($violence->meta_value == 9){
-                    $viol = 'Special Operation Command (Koopsus)';
+                    $viol = 'HQ';
                 }elseif($violence->meta_value == 10){
+                    $viol = 'Outpost';
+                }elseif($violence->meta_value == 11){
+                    $viol = 'Police Stations';
+                }elseif($violence->meta_value == 12){
+                    $viol = 'Settlement/Residential Area/Village';
+                }elseif($violence->meta_value == 13){
+                    $viol = 'Transportation Infrastructure (Bridge, Road, Highway, etc.)';
+                }elseif($violence->meta_value == 14){
                     $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
@@ -59,7 +67,7 @@ class MilitarytypeController extends Controller
                 DB::table('indostatistiknews')
                     ->where('id_listing', $violence->id)
                     ->update([
-                        'sub_actor_type' => $viol
+                        'target_type_facilities' => $viol
                     ]);
             }
 

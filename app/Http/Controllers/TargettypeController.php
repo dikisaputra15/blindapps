@@ -33,14 +33,16 @@ class TargettypeController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 1){
+                if($violence->meta_value == 5){
+                    $viol = 'Facilities';
+                }elseif($violence->meta_value == 1){
                     $viol = 'Personnel';
+                }elseif($violence->meta_value == 2){
+                    $viol = 'Personnel/Equipment';
                 }elseif($violence->meta_value == 3){
                     $viol = 'Vehicle';
                 }elseif($violence->meta_value == 4){
-                    $viol = 'Other';
-                }elseif($violence->meta_value == 2){
-                    $viol = 'Property';
+                    $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
                 }

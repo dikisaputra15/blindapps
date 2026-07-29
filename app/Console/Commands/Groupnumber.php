@@ -7,39 +7,39 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 
-class Actortype extends Command
+class Groupnumber extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'task:runactortype';
+    protected $signature = 'task:rungroupnumber';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'actortype added';
+    protected $description = 'groupnumber added';
 
     /**
      * Execute the console command.
      */
 
-     public function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
     public function handle()
     {
-        $response = Http::get('https://id.code69.my.id/actortype');
+        $response = Http::get('https://id.code69.my.id/groupnumber');
 
         if ($response->successful()) {
-            $this->info('Actor Type accessed successfully.');
+            $this->info('Group number accessed successfully.');
         } else {
-            $this->error('Failed to access Actor Type.');
+            $this->error('Failed to access Group number.');
         }
     }
 }

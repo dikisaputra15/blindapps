@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class MilitarytypeController extends Controller
+class FirearmtypeController extends Controller
 {
     public function index()
     {
@@ -22,7 +22,7 @@ class MilitarytypeController extends Controller
             ->select('wp_postmeta.post_id', 'wp_postmeta.meta_value', 'wp_posts.post_date', 'wp_w2gm_locations_relationships.id')
             ->whereDate(DB::raw('DATE(wp_posts.post_date)'), $tgl_now)
             // ->whereBetween(DB::raw('DATE(wp_posts.post_date)'), [$tgl_coba[0], $tgl_coba[1]])
-            ->where('wp_postmeta.meta_key', '_content_field_172')
+            ->where('wp_postmeta.meta_key', '_content_field_213')
             ->get();
 
         //    $no = 1;
@@ -33,25 +33,15 @@ class MilitarytypeController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 3){
-                    $viol = 'Air Force';
-                }elseif($violence->meta_value == 4){
-                    $viol = 'Air Force SF';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'Army';
+                if($violence->meta_value == 1){
+                    $viol = 'Military Grade Firearms';
                 }elseif($violence->meta_value == 2){
-                    $viol = 'Army SF';
-                }elseif($violence->meta_value == 7){
-                    $viol = 'Marines';
-                }elseif($violence->meta_value == 8){
-                    $viol = 'Marines SF';
+                    $viol = 'Civilian Firearms (commercial hunting, shotguns, etc.)';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Homemade Firearms';
+                }elseif($violence->meta_value == 4){
+                    $viol = 'Service Firearms (Police, corrective services, border protection, customs, etc.)';
                 }elseif($violence->meta_value == 5){
-                    $viol = 'Navy';
-                }elseif($violence->meta_value == 6){
-                    $viol = 'Navy SF';
-                }elseif($violence->meta_value == 9){
-                    $viol = 'Special Operation Command (Koopsus)';
-                }elseif($violence->meta_value == 10){
                     $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
@@ -59,7 +49,7 @@ class MilitarytypeController extends Controller
                 DB::table('indostatistiknews')
                     ->where('id_listing', $violence->id)
                     ->update([
-                        'sub_actor_type' => $viol
+                        'firearm_type' => $viol
                     ]);
             }
 

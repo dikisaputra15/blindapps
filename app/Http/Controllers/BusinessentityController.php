@@ -33,22 +33,22 @@ class BusinessentityController extends Controller
 
         if($violences->isNotEmpty()){
             foreach($violences as $violence){
-                if($violence->meta_value == 6){
+               if($violence->meta_value == 6){
                     $viol = 'Country State-owned Enterprise (SOE)';
-                }elseif($violence->meta_value == 5){
-                    $viol = 'Multinational Corporation';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'Small or Medium Business/Firm';
                 }elseif($violence->meta_value == 7){
                     $viol = 'Foreign Business/Enterprise';
-                }elseif($violence->meta_value == 3){
-                    $viol = 'National Conglomerate';
-                }elseif($violence->meta_value == 8){
-                    $viol = 'Other';
                 }elseif($violence->meta_value == 2){
                     $viol = 'Large Business/Firm';
+                }elseif($violence->meta_value == 5){
+                    $viol = 'Multinational Corporation';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'National Conglomerate';
                 }elseif($violence->meta_value == 4){
                     $viol = 'National Conglomerate - Multinational Corporation';
+                }elseif($violence->meta_value == 1){
+                    $viol = 'Small or Medium Business/Firm';
+                }elseif($violence->meta_value == 8){
+                    $viol = 'Other';
                 }else{
                     $viol = NULL;
                 }

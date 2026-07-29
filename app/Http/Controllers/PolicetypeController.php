@@ -36,18 +36,18 @@ class PolicetypeController extends Controller
             foreach($violences as $violence){
                 if($violence->meta_value == 5){
                     $viol = 'Detachment 88 (Densus 88)';
-                }elseif($violence->meta_value == 3){
-                    $viol = 'Municipality Police (Polres)';
-                }elseif($violence->meta_value == 2){
-                    $viol = 'Provincial Police (Polda)';
                 }elseif($violence->meta_value == 4){
-                    $viol = 'District-level Police (Polsek)';
-                }elseif($violence->meta_value == 1){
-                    $viol = 'National Police (Polri)';
-                }elseif($violence->meta_value == 7){
-                    $viol = 'Other';
+                    $viol = 'District-Level Police (Polsek)';
                 }elseif($violence->meta_value == 6){
                     $viol = 'Mobile Brigade (Brimob)';
+                }elseif($violence->meta_value == 3){
+                    $viol = 'Municipality Police (Polres)';
+                }elseif($violence->meta_value == 1){
+                    $viol = 'National Police (Polri)';
+                }elseif($violence->meta_value == 2){
+                    $viol = 'Provincial Police (Polda)';
+                }elseif($violence->meta_value == 7){
+                    $viol = 'Unconfirmed/Unclear';
                 }else{
                     $viol = NULL;
                 }
