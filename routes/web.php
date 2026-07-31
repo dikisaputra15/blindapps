@@ -32,7 +32,7 @@ Route::get('/explosivetype', [App\Http\Controllers\ExplosivetypeController::clas
 Route::get('/violence', [App\Http\Controllers\ViolenceController::class, 'index']);
 Route::get('/articlelink', [App\Http\Controllers\ArticlelinkController::class, 'index']);
 Route::get('/businessentity', [App\Http\Controllers\BusinessentityController::class, 'index']);
-Route::get('/civiliantype', [App\Http\Controllers\CiviliantypeController::class, 'index']);
+// Route::get('/civiliantype', [App\Http\Controllers\CiviliantypeController::class, 'index']);
 Route::get('/community', [App\Http\Controllers\ComunitygroupController::class, 'index']);
 Route::get('/goverment', [App\Http\Controllers\GovermentController::class, 'index']);
 Route::get('/military', [App\Http\Controllers\MilitarytypeController::class, 'index']);

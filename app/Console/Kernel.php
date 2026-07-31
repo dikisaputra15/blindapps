@@ -22,7 +22,6 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Violence::class,
         \App\Console\Commands\Articlelink::class,
         \App\Console\Commands\Business::class,
-        \App\Console\Commands\Civilian::class,
         \App\Console\Commands\Communnity::class,
         \App\Console\Commands\Goverment::class,
         \App\Console\Commands\Military::class,
@@ -96,8 +95,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runarticlelink')->everyFifteenMinutes();
 
         $schedule->command('task:runbusiness')->everyFifteenMinutes();
-
-        $schedule->command('task:runcivilian')->everyFifteenMinutes();
 
         $schedule->command('task:runcommunity')->everyFifteenMinutes();
 
