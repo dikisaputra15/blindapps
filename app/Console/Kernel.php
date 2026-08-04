@@ -30,6 +30,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Terorist::class,
         \App\Console\Commands\Vested::class,
         \App\Console\Commands\Time::class,
+        \App\Console\Commands\Timeend::class,
         \App\Console\Commands\Numberprotest::class,
         \App\Console\Commands\Issue::class,
         \App\Console\Commands\Tanggalstart::class,
@@ -111,6 +112,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runvested')->everyFifteenMinutes();
 
         $schedule->command('task:runtime')->everyFifteenMinutes();
+
+        $schedule->command('task:runtimeend')->everyFifteenMinutes();
 
         $schedule->command('task:runnumberprotest')->everyFifteenMinutes();
 
