@@ -63,6 +63,9 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\Targetseparatist::class,
         \App\Console\Commands\Targetterorist::class,
         \App\Console\Commands\Targettypefacility::class,
+        \App\Console\Commands\Actorrole::class,
+        \App\Console\Commands\Targetrole::class,
+        \App\Console\Commands\Sponsor::class,
     ];
     /**
      * Define the application's command schedule.
@@ -151,6 +154,9 @@ class Kernel extends ConsoleKernel
         $schedule->command('task:runtargetseparatist')->everyFifteenMinutes();
         $schedule->command('task:runtargetterorist')->everyFifteenMinutes();
         $schedule->command('task:runtargettypefacility')->everyFifteenMinutes();
+        $schedule->command('task:runactorrole')->everyFifteenMinutes();
+        $schedule->command('task:runtargetrole')->everyFifteenMinutes();
+        $schedule->command('task:runsponsor')->everyFifteenMinutes();
     }
 
     /**

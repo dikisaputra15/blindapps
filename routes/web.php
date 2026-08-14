@@ -74,3 +74,6 @@ Route::get('/targetreggov', [App\Http\Controllers\TargetreggovController::class,
 Route::get('/targetseparatist', [App\Http\Controllers\TargetseparatistController::class, 'index']);
 Route::get('/targetterorist', [App\Http\Controllers\TargetteroristController::class, 'index']);
 Route::get('/targettypefacility', [App\Http\Controllers\TargettypefacilityController::class, 'index']);
+Route::get('/actorrole', [App\Http\Controllers\ActorroleController::class, 'index']);
+Route::get('/targetrole', [App\Http\Controllers\TargetroleController::class, 'index']);
+Route::get('/sponsor', [App\Http\Controllers\SponsorController::class, 'index']);
